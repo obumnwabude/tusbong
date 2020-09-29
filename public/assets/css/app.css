@@ -143,7 +143,7 @@ footer > p {
   font-weight: bold;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 991.98px) {
   nav#navbar div ul {
     margin-left: 8px;
   }
@@ -157,7 +157,7 @@ footer > p {
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   nav#navbar {
     display: block;
   }
@@ -190,9 +190,7 @@ footer > p {
   button#logout {
     font-weight: bold;
   }
-}
 
-@media (min-width: 992px) {
   nav#navbar div ul li {
     margin-right: 24px;
   }
