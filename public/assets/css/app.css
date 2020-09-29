@@ -9,10 +9,12 @@ body {
   font-family: sans-serif;
   color: var(--gray-700);
   background-color: #fff;
-  height: 100%;
+  min-height: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding-top: 48px;
+  position: relative;
+  padding-bottom: 64px;
 }
 
 a, button#logout {
@@ -121,7 +123,14 @@ header img {
 }
 
 main {
-  height: 2000px;
+  min-height: 100%; 
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 footer span {
