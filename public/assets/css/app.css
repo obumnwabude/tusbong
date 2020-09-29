@@ -12,6 +12,7 @@ body {
   height: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  padding-top: 48px;
 }
 
 a, button#logout {
@@ -109,6 +110,14 @@ button#logout {
 
 nav#navbar input:checked ~ div ul {
   display: block;
+}
+
+header {
+  width: 100%;
+}
+
+header img {
+  width: 100%;
 }
 
 main {
