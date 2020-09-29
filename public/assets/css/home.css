@@ -1,0 +1,48 @@
+main {
+  padding: 64px 32px 32px 32px;
+  max-width: 832px;
+  margin: 0 auto;
+}
+
+section {
+  border: 4px solid var(--primary-300);
+  border-radius: 32px;
+  margin: 0px auto 64px auto;
+  max-width: 384px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.25rem;
+  padding: 16px 24px;
+  background-color: var(--primary-400);
+  color: #fff;
+  border-radius: 24px 24px 0px 0px;
+}
+
+section p {
+  padding: 16px;
+  font-size: 1.25rem;
+}
+
+.button-container {
+  text-align: right;
+  padding: 24px;
+}
+
+.button-container a {
+  color: var(--primary-100);
+  background-color: var(--primary-900);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 64px;
+  }
+}
