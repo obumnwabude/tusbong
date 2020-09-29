@@ -1,0 +1,79 @@
+Colors
+Primary
+900 - #1f2c6d
+800 - #253586
+700 - #3547a4
+600 - #495dc6
+500 - #6175de
+400 - #758ce0
+300 - #95aeed
+200 - #d4def8
+100 - #f0f4fe
+
+Accents
+Success
+700 - #114443
+600 - #1a645d
+500 - #2a9187
+400 - #3bada2
+300 - #6dd6d2
+200 - #a7edea
+100 - #e6fdfe
+Warn
+700 - #5c4813
+600 - #8c6d1f
+500 - #caa53d
+400 - #f3c963
+300 - #fae29f
+200 - #fcf2d6
+100 - #fefbf3
+Danger
+700 - #601717
+600 - #891b1b
+500 - #b71f1f
+400 - #db2f2f
+300 - #e46464
+200 - #f5aaaa
+100 - #fce8e8
+
+Grays
+900 - #212934
+800 - #404b5a
+700 - #6e7a8a
+600 - #929fb1
+500 - #aebecd
+400 - #ccd4db
+300 - #d5dde5
+200 - #e1e7ec
+100 - #f8f9fa
+
+Spacing and Sizing
+4px
+8px
+12px 
+16px - 1rem
+24px
+32px
+48px
+64px
+96px
+128px
+192px
+256px
+384px
+512px
+640px
+768px
+
+Font Sizes
+12px - 0.75rem
+14px - 0.875rem
+16px - 1rem
+18px - 1.125rem
+20px - 1.25rem
+24px - 1.5rem
+30px - 1.875rem
+36px - 2.25rem
+48px - 3rem
+60px - 3.875rem
+72px - 4.5rem
