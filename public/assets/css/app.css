@@ -90,6 +90,18 @@ button#logout {
   color: #fff;
 }
 
+nav#navbar div ul li a.active {
+  color: var(--primary-800);
+  background-color: var(--primary-200);
+  padding: 2px;
+  border-radius: 4px;
+  box-shadow: inset 0px 0px 6px var(--gray-700);
+}
+
+nav#navbar div ul li a.active:hover {
+  text-decoration: none;
+}
+
 button#logout {
   background: transparent;
   border: none;
