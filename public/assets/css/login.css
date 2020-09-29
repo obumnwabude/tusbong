@@ -68,7 +68,7 @@ p a {
     padding: 16px;
     background-color: var(--primary-500);
     color: #fff;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 2px 6px var(--gray-400);
   }
 
   main {
@@ -128,7 +128,7 @@ p a {
   }
 
   header h1 {
-    text-shadow: 2px 1px #fff, 0px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 1px #fff, 0px 2px var(--gray-300);
     margin-bottom: 16px;
   }
 

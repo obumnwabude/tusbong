@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/assets/css/colors.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+  <meta name="keywords" content="transfer, bank, nigeria, money, finance, loans, bvn, business">
+  <meta name="description" content="Tusbong | Transfer money quickly and easily to anywhere in Nigeria">
+  <title>Make a Transfer | Tusbong</title>
+</head>
+<body>
+<nav id="navbar">
+  <input type="checkbox" id="nav-collapse" aria-label="Toggle Menu Button of Navigation Bar">
+  <label for="nav-collapse" aria-hidden="true">
+    <img src="/assets/svg_icons/menu.svg" alt="menu">
+  </label>
+  <div>
+    <h1 id="nav-brand"><a href="#">Tusbong</a></h1>
+    <ul>
+      <li><a href="/transfer.html">Transfer</a></li>
+      <li><a href="#">Loan</a></li>
+      <li><a href="#">Deposit</a></li>
+      <li><button id="logout">Logout</button></li>
+    </ul>
+  </div>
+</nav>
+<main></main>
+<footer>
+  <span></span>
+  <p>Tusbong &copy;2020</p>
+</footer>
+<script src="/__/firebase/7.21.1/firebase-app.js"></script>
+<script src="/__/firebase/7.21.1/firebase-analytics.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script type="text/javascript">
+  const nav = document.querySelector('nav#navbar');
+  const navToggle = document.querySelector('nav#navbar input');
+  window.addEventListener('scroll', (e) => {
+  if (navToggle.checked) {
+    navToggle.checked = false;
+  }
+});
+</script>
+</body>
+</html>
