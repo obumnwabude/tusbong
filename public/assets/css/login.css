@@ -18,6 +18,11 @@ header h1 {
   border-top: none;
   border-right: none;
   border-bottom: 2px solid var(--primary-700);
+  margin-bottom: 32px;
+  height: 16px;
+}
+
+.form-inputs label {
   margin-bottom: 8px;
 }
 
@@ -40,7 +45,7 @@ input[type="submit"] {
 }
 
 hr {
-  margin: 0px auto 16px auto;
+  margin: 16px auto;
   width: 80%;
 }
 
