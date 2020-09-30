@@ -5,7 +5,7 @@ html {
 
 header h1 {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 
 .form-inputs {
@@ -63,6 +63,7 @@ p a {
     width: 100%;
     display: flex;
     background-color: #fff;
+    padding-top: 80px;
   }
 
   header {
@@ -78,6 +79,7 @@ p a {
 
   main {
     margin: auto;
+    padding: 24px;
   }
 
   .form-inputs input:focus-within + label {
@@ -119,6 +121,11 @@ p a {
 
   main {
     min-width: 312px;
+  }
+
+  .form-inputs input:focus-within + label {
+    font-weight: bold;
+    text-shadow: 0px 0px 1px #fff;
   }
 
   p a {
