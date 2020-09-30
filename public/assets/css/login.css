@@ -3,6 +3,10 @@ html {
   height: 100vh;
 }
 
+.hide {
+  display: none !important;
+}
+
 header h1 {
   font-weight: bold;
   font-size: 2.25rem;
@@ -51,6 +55,11 @@ hr {
 
 p {
   margin-bottom: 4px;
+  max-width: 312px;
+}
+
+p.info {
+  font-size: 0.875rem;
 }
 
 p a {
