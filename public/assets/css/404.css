@@ -4,7 +4,7 @@ main {
 
 main h2 {
   font-size: 2rem;
-  color: var(--primary-500);
+  color: var(--gray-900);
   margin-bottom: 16px;
 }
 
