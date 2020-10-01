@@ -1,7 +1,14 @@
-const checkSignedInUser = () => {
-  if (firebase.auth().currentUser !== null
-      && firebase.auth().currentUser.displayName !== null) {
-    window.location.replace(window.location.origin);
+const checkSignedInUser = async () => {
+  const user = firebase.auth().currentUser;
+  if (user !== null && user.displayName !== null) {
+    const firestoreUser = await firebase.firestore().doc(`users/${user.uid}`).get();
+    if (firestoreUser.exists && firestoreUser.data().phone && firestoreUser.data().phoneVerified) {
+      alert(`Dear ${user.displayName},\nYou are currently signed in as ${user.email}.\nPlease logout first before creating a new account.\nThank You!`);
+      window.location.replace(window.location.origin);
+    } else {
+      alert(`Dear ${user.displayName},\nYou are currently signed in as ${user.email}.\nBut you need to verify your Phone Number`);
+      window.location.replace(window.location.origin + '/verify');
+    }
   } 
 }
 

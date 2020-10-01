@@ -41,7 +41,7 @@ const verifyPhone = () => {
   insertCodeDiv();
   submitButton.value = 'Verify Code';
   submitButton.disabled = false;
-  alert('Your 6 digit code is:\n' + codeDigits);
+  alert(`Dear ${firebase.auth().currentUser.displayName},\nYour 6 digit code is:\n${codeDigits}`);
   awaitingCode = true;
 };
 
@@ -57,9 +57,12 @@ verifyForm.addEventListener('submit', async (e) => {
         if (codeDigits == formBody.code) {
           await firebase.firestore()
             .doc(`users/${authUser.uid}`)
-            .update({phoneVerified: true})
+            .update({
+              phone: formBody.phone,
+              phoneVerified: true
+            })
             .then(() => {
-              alert('Your Phone Number has been verified');
+              alert(`Dear ${authUser.displayName},\nYour Phone Number has been verified`);
               window.location.replace(window.location.origin);
             });
           } else {
@@ -74,8 +77,8 @@ verifyForm.addEventListener('submit', async (e) => {
         try {
           const firestoreUser = await firebase.firestore().doc(`users/${authUser.uid}`).get();
           if (firestoreUser.exists) {
-            if (firestoreUser.data().phoneVerified) {
-              alert('Your Phone Number has been verified');
+            if (firestoreUser.data().phone && firestoreUser.data().phoneVerified) {
+              alert(`Dear ${authUser.displayName},\nYour Phone Number has been verified`);
               window.location.replace(window.location.origin);
             } else {
               verifyPhone();
@@ -108,6 +111,6 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     addUsersName(user.displayName)
   } else {
-    window.location.replace(window.location.origin);
+    window.location.replace(window.location.origin + '/login');
   }
 });
