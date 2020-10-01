@@ -14,21 +14,22 @@
   <header><h1>Tusbong</h1></header>
   <main>
     <h2>Verify your Phone Number</h2>
-    <p class="info">Enter your phone number below. We will send an SMS with a code to verify it.</p>
+    <p class="info before-phone">Enter your phone number below. We will send an SMS with a code to verify it.</p>
     <form id="verify">
       <div class="form-inputs">
-        <input type="tel" id="phone" name="phone" autocomplete="phone" pattern="^(0|\+234|234)?[789][01]\d{8}$" required>
+        <input type="tel" id="phone" name="phone" autocomplete="phone" pattern="^\+234[789][01]\d{8}$" required placeholder="In format of +234xxxxxxxxxx">
         <label for="phone">Phone Number</label>
-      </div>
-      <p class="info hide">SMS with verification code has been sent</p>
-      <div class="form-inputs hide">
-        <input type="tel" id="code" name="code" autocomplete="off" pattern="^\d{6}$" required="false">
-        <label for="code">Code</label>
       </div>
       <div class="submit-container">
         <input type="submit" value="Send SMS">
       </div>
     </form>
   </main>
+<script src="/__/firebase/7.21.1/firebase-app.js"></script>
+<script src="/__/firebase/7.21.1/firebase-analytics.js"></script>
+<script src="/__/firebase/7.21.1/firebase-auth.js"></script>
+<script src="/__/firebase/7.21.1/firebase-firestore.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script src="/assets/js/verify.js"></script>
 </body>
 </html>
