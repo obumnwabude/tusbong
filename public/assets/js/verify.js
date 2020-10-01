@@ -34,13 +34,30 @@ const removeCodeDiv = () => {
   }
 };
 
-const verifyPhone = () => {
+const sendCodeWithAtlasAPI = async (phone, codeDigits) => 
+  fetch('https://sandboxapi.fsi.ng/atlabs/messaging', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Sandbox-Key': `${await (await fetch('/sandbox')).text()}`
+    },
+    body: JSON.stringify({
+      to: phone,
+      from: 'Tusbong',
+      message: `Dear ${firebase.auth().currentUser.displayName},\nYour 6 digit code is:\n${codeDigits}`
+    })
+  }).then((response) => response.json())
+    .catch((error) => console.log(error));
+
+const verifyPhone = async (phone) => {
   codeDigits = Math.trunc(Math.random() * 1000000);
   if (codeDigits.toString().length === 5)
-    codeDigits = Number(codeDigits.toString.concat('0'));
+    codeDigits = Number(codeDigits.toString().concat('0'));
   insertCodeDiv();
   submitButton.value = 'Verify Code';
   submitButton.disabled = false;
+  //send the code through SMS
+  await sendCodeWithAtlasAPI(phone, codeDigits);
   alert(`Dear ${firebase.auth().currentUser.displayName},\nYour 6 digit code is:\n${codeDigits}`);
   awaitingCode = true;
 };
@@ -81,7 +98,7 @@ verifyForm.addEventListener('submit', async (e) => {
               alert(`Dear ${authUser.displayName},\nYour Phone Number has been verified`);
               window.location.replace(window.location.origin);
             } else {
-              verifyPhone();
+              verifyPhone(phone);
             }
           } else {
             await firebase.firestore().doc(`users/${authUser.uid}`)
@@ -90,7 +107,7 @@ verifyForm.addEventListener('submit', async (e) => {
               phoneVerified: false
             })
             .then(() => {
-              verifyPhone();
+              verifyPhone(phone);
             })
           }
         } catch (error) {
