@@ -48,6 +48,12 @@ input[type="submit"] {
   font-size: 1.25rem;
 }
 
+input[type="submit"]:disabled {
+  background-color: var(--primary-100);
+  color: var(--primary-900);  
+  box-shadow: inset 0px 0px 8px var(--gray-600);
+}
+
 hr {
   margin: 16px auto;
   width: 80%;
