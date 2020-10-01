@@ -24,7 +24,7 @@
       <li><a href="#">Transfer</a></li>
       <li><a href="#">Loan</a></li>
       <li><a href="#">Deposit</a></li>
-      <li><button id="logout">Logout</button></li>
+      <li><button id="logout" onclick="signOut()">Logout</button></li>
     </ul>
   </div>
 </nav>
@@ -59,15 +59,9 @@
 </footer>
 <script src="/__/firebase/7.21.1/firebase-app.js"></script>
 <script src="/__/firebase/7.21.1/firebase-analytics.js"></script>
+<script src="/__/firebase/7.21.1/firebase-auth.js"></script>
 <script src="/__/firebase/init.js"></script>
-<script type="text/javascript">
-  const nav = document.querySelector('nav#navbar');
-  const navToggle = document.querySelector('nav#navbar input');
-  window.addEventListener('scroll', (e) => {
-  if (navToggle.checked) {
-    navToggle.checked = false;
-  }
-});
+<script src="/assets/js/app.js"></script>
 </script>
 </body>
 </html>

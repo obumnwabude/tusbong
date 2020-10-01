@@ -1,3 +1,12 @@
+const checkSignedInUser = () => {
+  if (firebase.auth().currentUser !== null
+      && firebase.auth().currentUser.displayName !== null) {
+    window.location.replace(window.location.origin);
+  } 
+}
+
+firebase.auth().onAuthStateChanged(checkSignedInUser);
+
 const el = (sel) => document.querySelector(sel);
 const regForm = el('#register');
 const name = el('#name');
@@ -19,7 +28,10 @@ regForm.addEventListener('submit', async (e) => {
   } else {
     submitButton.disabled = true;
     await firebase.auth().createUserWithEmailAndPassword(formBody.email, formBody.password)
-      .then((user) => console.log(user))
+      .then((user) => firebase.auth().currentUser.updateProfile({
+        displayName: formBody.name
+      }))
+      .then(() => window.location.assign(window.location.origin + '/verify'))
       .catch((error) => {
         clearFields();
         submitButton.disabled = false;

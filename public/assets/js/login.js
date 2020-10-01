@@ -1,3 +1,11 @@
+const checkSignedInUser = () => {
+  if (firebase.auth().currentUser !== null) {
+    window.location.replace(window.location.origin);
+  } 
+}
+
+firebase.auth().onAuthStateChanged(checkSignedInUser);
+
 const el = (sel) => document.querySelector(sel);
 const loginForm = el('#login');
 const email = el('#email');
