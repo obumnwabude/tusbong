@@ -20,6 +20,7 @@ header h1 {
   border-bottom: 2px solid var(--primary-700);
   margin-bottom: 32px;
   height: 16px;
+  font-size: 1rem;
 }
 
 .form-inputs label {

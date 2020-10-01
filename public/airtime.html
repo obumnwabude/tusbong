@@ -36,11 +36,11 @@
   <p>Quickly buy airtime for anyone in Nigeria. Enter the recipient phone number and the amount of airtime you want to buy.</p>
   <form id="airtime">
     <div class="form-inputs">
-        <input type="tel" id="phone" name="phone" autocomplete="phone" pattern="^(0|\+234|234)?[789][01]\d{8}$" required>
-        <label for="phone">Phone Number</label>
-      </div>
+      <input type="tel" id="phone" name="phone" autocomplete="phone" pattern="^\+234[789][01]\d{8}$" required placeholder="In format of +234xxxxxxxxxx">
+      <label for="phone">Phone Number</label>
+    </div>
     <div class="form-inputs">
-      <input type="number" min="100" max="10000" id="amount" name="amount" minlength="8" autocomplete="off" required>
+      <input type="number" min="100" max="10000" id="amount" name="amount" minlength="8" autocomplete="off" required placeholder="min: 100, max: 10000">
       <label for="amount">Amount</label>
     </div>
     <div class="submit-container">
@@ -58,5 +58,6 @@
 <script src="/__/firebase/7.21.1/firebase-firestore.js"></script>
 <script src="/__/firebase/init.js"></script>
 <script src="/assets/js/app.js"></script>
+<script src="/assets/js/airtime.js"></script>
 </body>
 </html>

@@ -31,6 +31,7 @@ form {
   border-bottom: 2px solid var(--primary-700);
   margin-bottom: 32px;
   height: 16px;
+  font-size: 1rem;
 }
 
 .form-inputs input:focus-within + label {
@@ -43,6 +44,9 @@ form {
   margin-bottom: 8px;
 }
 
+::placeholder {
+  font-size: 0.875rem;
+}
 
 .submit-container {
   text-align: center;
