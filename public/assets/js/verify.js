@@ -121,12 +121,17 @@ verifyForm.addEventListener('submit', async (e) => {
     }
   } else {
     alert('please retry');
+    submitButton.disabled = false;
   }
 });
 
-firebase.auth().onAuthStateChanged((user) => {
+firebase.auth().onAuthStateChanged(async (user) => {
   if (user) {
-    addUsersName(user.displayName)
+    addUsersName(user.displayName);
+    const firestoreUser = await firebase.firestore().doc(`users/${user.uid}`).get();
+    if (firestoreUser.exists && firestoreUser.data().phone && firestoreUser.data().phoneVerified) {
+      window.location.replace(window.location.origin);
+    }
   } else {
     window.location.replace(window.location.origin + '/login');
   }
