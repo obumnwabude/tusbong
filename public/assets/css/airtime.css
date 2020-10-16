@@ -30,8 +30,10 @@ form {
   border-right: none;
   border-bottom: 2px solid var(--primary-700);
   margin-bottom: 32px;
-  height: 16px;
+  height: 32px;
+  line-height: 32px;
   font-size: 1rem;
+  outline: 0;
 }
 
 .form-inputs input:focus-within + label {
